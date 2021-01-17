@@ -21,8 +21,8 @@ package org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.hadoop.test.GenericTestUtils;
 import org.apache.hadoop.yarn.api.records.ApplicationAttemptId;
 import org.apache.hadoop.yarn.api.records.Resource;
@@ -55,8 +55,8 @@ import java.util.concurrent.atomic.AtomicReference;
 public class TestCapacitySchedulerMultiNodesWithPreemption
     extends CapacitySchedulerTestBase {
 
-  private static final Log LOG = LogFactory
-      .getLog(TestCapacitySchedulerMultiNodesWithPreemption.class);
+  private static final Logger LOG = LoggerFactory
+      .getLogger(TestCapacitySchedulerMultiNodesWithPreemption.class);
   private CapacitySchedulerConfiguration conf;
   private static final String POLICY_CLASS_NAME =
       "org.apache.hadoop.yarn.server.resourcemanager.scheduler.placement."
